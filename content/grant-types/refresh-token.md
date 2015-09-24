@@ -111,8 +111,10 @@ This refresh token can then be used to generate a new access token of equal or
 lesser scope:
 
 ```text
-$ curl -u TestClient:TestSecret https://api.mysite.com/token -d 'grant_type=refresh_token&refresh_token=tGzv3JOkF0XG5Qx2TlKWIA'
+$ curl -u TestClient:TestSecret https://api.mysite.com/token -d 'grant_type=refresh_token&refresh_token=tGzv3JOkF0XG5Qx2TlKWIA&client_id=bshaffer&client_secret=37deb3aabb023561291c20cf9aa9669b2c3bbd28'
 ```
+
+Important: remember to insert **refresh_token** grant type to this client in **oauth_clients table**. You can insert as many grant types you wish, space separated.
 
 A successful token request will return a standard access token in JSON format:
 
